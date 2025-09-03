@@ -1,44 +1,115 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
+  min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: start;
-  background-color: #f0f0f0;
-  font-family: Arial, sans-serif;
-  padding: 20px;
+  align-items: center;
+  background: linear-gradient(135deg, #8052ec, #d161ff);
+  font-family: "Poppins", sans-serif;
 }
+
 .container {
+  width: 400px;
   background: #fff;
-  width: 100%;
-  max-width: 400px;
+  border-radius: 10px;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
+
+.container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
 .todo-body {
   display: flex;
-  margin-bottom: 15px;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
-#todoInput {
+
+.todo-body input {
   flex: 1;
   padding: 10px;
   font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+  transition: 0.3s;
 }
-#addBtn {
+
+.todo-body input:focus {
+  border-color: #8052ec;
+}
+
+.todo-body button {
   padding: 10px 20px;
   margin-left: 10px;
   font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background: #8052ec;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
 }
-#todoList li {
+
+.todo-body button:hover {
+  background: #5b2dbd;
+}
+
+#todoList {
   list-style: none;
-  padding: 10px;
-  margin-bottom: 5px;
-  background: #e6e6e6;
-  border-radius: 4px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
+
+#todoList li {
+  position: relative;
+  background: #f2f2f2;
+  margin-bottom: 10px;
+  padding: 12px 45px 12px 15px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#todoList li:hover {
+  background: #e6e6e6;
+}
+
 #todoList li.completed {
   text-decoration: line-through;
-  opacity: 0.6;
+  color: #888;
+}
+
+/* Delete button */
+#todoList li button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ff4d4d;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+
+#todoList li button:hover {
+  background: #cc0000;
 }
