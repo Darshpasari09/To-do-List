@@ -11,11 +11,17 @@ function addTask() {
   const li = document.createElement('li');
   li.textContent = text;
 
+  // Delete button
   const removeBtn = document.createElement('button');
-  removeBtn.textContent = 'Delete';
+  removeBtn.textContent = "×"; // cross symbol
   removeBtn.addEventListener('click', () => li.remove());
 
-  li.addEventListener('click', () => li.classList.toggle('completed'));
+  // Toggle completed task
+  li.addEventListener('click', (e) => {
+    if (e.target.tagName !== "BUTTON") {
+      li.classList.toggle('completed');
+    }
+  });
 
   li.appendChild(removeBtn);
   list.appendChild(li);
